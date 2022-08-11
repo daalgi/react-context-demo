@@ -1,26 +1,19 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './App.css'
+import { UserProvider } from './context/UserContext'
+import UserBox from './components/UserBox'
+import ScoreCounter from './components/ScoreCounter'
+import UsernameInput from './components/UsernameInput'
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <div className="App">
+            <UserProvider>
+                <UserBox />
+                <ScoreCounter />
+                <UsernameInput />
+            </UserProvider>
+        </div>
+    )
 }
 
-export default App;
+export default App
